@@ -787,11 +787,14 @@ get_user_input() {
         esac
     done
 
+    # Capture selected mode so it is not overwritten by any config reload; use this for all mode-specific prompts
+    local selected_tunnel_mode="$TUNNEL_MODE"
+
     SOCKS_AUTH_ENABLED="no"
     SOCKS_USERNAME=""
     SOCKS_PASSWORD=""
     
-    if [ "$TUNNEL_MODE" = "socks" ]; then
+    if [ "$selected_tunnel_mode" = "socks" ]; then
         # Use saved SOCKS config from initial load (no need to reload)
         
         while true; do
@@ -875,7 +878,7 @@ get_user_input() {
     SHADOWSOCKS_PASSWORD=""
     SHADOWSOCKS_METHOD="aes-256-gcm"
 
-    if [ "$TUNNEL_MODE" = "shadowsocks" ]; then
+    if [ "$selected_tunnel_mode" = "shadowsocks" ]; then
         # Use saved Shadowsocks config from initial load (no need to reload)
         # Variables are already saved as existing_ss_port, existing_ss_method, existing_ss_password
 
@@ -959,6 +962,9 @@ get_user_input() {
             esac
         done
     fi
+
+    # Ensure TUNNEL_MODE is set from user's selection for save_config and rest of script
+    TUNNEL_MODE="$selected_tunnel_mode"
 
     print_status "Configuration:"
     print_status "  Domain: $DOMAIN"
