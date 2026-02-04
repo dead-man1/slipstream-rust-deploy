@@ -53,7 +53,8 @@ This command will:
 After setting up the server, you can connect to it using the slipstream-rust client. You have two options:
 
 1. **SlipStreamGUI** - A modern, cross-platform GUI client (recommended for beginners)
-2. **Command-line client** - For advanced users and automation
+2. **Slipstream Client for Android** - Native Android VPN client (full-tunnel via TUN + tun2socks)
+3. **Command-line client** - For advanced users and automation
 
 ### SlipStreamGUI (GUI Client)
 
@@ -102,6 +103,23 @@ If your PC and mobile device are on the same Wi-Fi network, you can configure yo
 - Find your PC's local IP address
 
 For more information, visit the [SlipStreamGUI repository](https://github.com/mirzaaghazadeh/SlipStreamGUI).
+
+---
+
+### Slipstream Client for Android
+
+[**Slipstream Client for Android**](https://github.com/VortexOne404/slipstream-client-android) is a native Android VPN client that provides full-tunnel connectivity via TUN + tun2socks.
+
+#### Download (v1.0)
+
+| Architecture   | Download |
+|----------------|----------|
+| ARM64 (arm64-v8a) | [app-arm64-v8a-release.apk](https://github.com/VortexOne404/slipstream-client-android/releases/download/v1.0/app-arm64-v8a-release.apk) |
+| ARMv7 (armeabi-v7a) | [app-armeabi-v7a-release.apk](https://github.com/VortexOne404/slipstream-client-android/releases/download/v1.0/app-armeabi-v7a-release.apk) |
+| x86             | [app-x86-release.apk](https://github.com/VortexOne404/slipstream-client-android/releases/download/v1.0/app-x86-release.apk) |
+| x86_64          | [app-x86_64-release.apk](https://github.com/VortexOne404/slipstream-client-android/releases/download/v1.0/app-x86_64-release.apk) |
+
+Or visit the [Releases page](https://github.com/VortexOne404/slipstream-client-android/releases) for all versions.
 
 ---
 
